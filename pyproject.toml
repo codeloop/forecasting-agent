@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=65.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forecasting-agent"
+version = "0.1.0"
+description = "Forecasting Agent with LLM capabilities"
+readme = "README.md"
+authors = [{ name = "Vikas Pandey", email = "vikaspandey707@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.12",
+]
+keywords = ["forecasting", "llm", "time-series", "ai"]
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "prophet>=1.1.4",
+    "darts>=0.24.0",
+    "tabulate>=0.9.0",
+    "langchain>=0.1.0",
+    "langchain-experimental>=0.0.43",
+    "colorama>=0.4.6",
+    "requests>=2.31.0",
+    "langchain-community>=0.0.19",
+    "langchain-core>=0.1.17",
+    "ollama>=0.1.6",
+    "plotly>=5.18.0",
+    "statsmodels>=0.14.1",
+    "scikit-learn>=1.3.2",
+]
+requires-python = ">=3.12"
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "isort", "mypy"]
+
+[project.urls]
+Homepage = "https://github.com/codeloop/forecasting-agent"
+Repository = "https://github.com/codeloop/forecasting-agent.git"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+exclude = ["tests*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py312']
+
+[tool.isort]
+profile = "black"
+line_length = 100
